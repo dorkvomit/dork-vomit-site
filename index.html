@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DORK VOMIT v2.9</title>
+
+<style>
+body {
+  margin: 0;
+  background: linear-gradient(45deg, hotpink, purple, cyan, black);
+  background-size: 400% 400%;
+  animation: bgShift 12s infinite;
+  color: lime;
+  font-family: "Comic Sans MS", cursive;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🔥 LOGO HEADER */
+.logo {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.logo h1 {
+  font-size: 80px;
+  margin: 0;
+  color: hotpink;
+  text-shadow:
+    0 0 5px hotpink,
+    0 0 10px purple,
+    0 0 20px cyan;
+  animation: glitch 0.2s infinite;
+}
+
+.flame-static {
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 15px orange);
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+/* glitch animation */
+@keyframes glitch {
+  0% { transform: translate(0px); }
+  25% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 2px); }
+  75% { transform: translate(1px, -1px); }
+  100% { transform: translate(0px); }
+}
+
+button {
+  background: black;
+  color: lime;
+  border: 2px solid hotpink;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px hotpink;
+}
+
+button:hover {
+  background: hotpink;
+  color: black;
+}
+
+.player {
+  border: 2px solid hotpink;
+  padding: 20px;
+  margin: 20px auto;
+  width: 320px;
+  box-shadow: 0 0 20px hotpink;
+  background: rgba(0,0,0,0.7);
+}
+
+.log {
+  font-family: monospace;
+  color: lime;
+  text-align: left;
+  width: 320px;
+  margin: 20px auto;
+  font-size: 12px;
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+  border: 1px solid lime;
+}
+
+.popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: black;
+  border: 2px solid red;
+  padding: 20px;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.popup.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 🐬 FEATURED GIF (SMALL, correct aspect ratio) */
+.gif-large.small-gif .gif-frame {
+  display: inline-block;
+  box-shadow: 0 0 30px hotpink;
+  line-height: 0;
+  width: 350px;           /* matches iframe width */
+  height: 197px;          /* 16:9 aspect ratio: 350/16*9 ≈ 197 */
+}
+
+.gif-large.small-gif iframe {
+  width: 350px !important;
+  height: 197px !important;
+  border: none;
+  display: block;
+}
+
+/* LARGE GIFS */
+.gif-large iframe {
+  width: 600px;
+  height: 600px;
+  border: none;
+  box-shadow: 0 0 30px hotpink;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+</style>
+
+<script>
+function infect() {
+  document.getElementById("popup").classList.add("show");
+}
+
+function closePopup() {
+  document.getElementById("popup").classList.remove("show");
+}
+
+document.addEventListener("keydown", function() {
+  document.body.style.filter = "hue-rotate(" + Math.random()*360 + "deg)";
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="content">
+
+<!-- 🔥 LOGO HEADER -->
+<div class="logo">
+  <h1>DORK VOMIT</h1>
+  <img src="https://media.giphy.com/media/IptaDPQQOB7PasM5ld/giphy.gif" class="flame-static">
+</div>
+
+<p>v2.0 // EMOTIONAL OS CORRUPTED</p>
+<p>ERROR: CONNECTION_TO_REALITY_UNSTABLE</p>
+
+<button onclick="infect()">ENTER SYSTEM</button>
+<button onclick="alert('ERROR: HELP FILE NOT FOUND')">ASK FOR HELP</button>
+
+<div class="player">
+  <p>NOW PLAYING: peewee_herman_REAL_FINAL.wav</p>
+  <audio controls>
+    <source src="track2.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<!-- 🐬 FEATURED GIF (SMALL, corrected aspect ratio) -->
+<div class="gif-large small-gif">
+  <div class="gif-frame">
+    <iframe src="https://giphy.com/embed/nnPI4XG0DI73q" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="log">
+  <p>> booting emotional_core.exe</p>
+  <p>> scanning for meaning...</p>
+  <p>> ERROR: none found</p>
+  <p>> loading soundtrack...</p>
+  <p>> welcome, user_01337</p>
+</div>
+
+<div id="popup" class="popup">
+  <p>⚠ SYSTEM WARNING ⚠</p>
+  <p>connection.exe has failed</p>
+  <p>reason: unmet needs</p>
+  <button onclick="closePopup()">OK</button>
+</div>
+
+<!-- 🍕 BOTTOM GIF (LARGE, unchanged) -->
+<div class="gif-large">
+  <iframe src="https://giphy.com/embed/9kQgu9QpIP1c0Qis4O" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<br><br>
+<p>VISITORS: 00001337</p>
+
+</div>
+
+</body>
+</html>
